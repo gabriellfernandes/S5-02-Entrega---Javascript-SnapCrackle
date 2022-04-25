@@ -55,6 +55,15 @@ function snapCrackle(x){
     return tenisPe
 }
 
+function eNumeroPrimo(x){
+    for (let i = 2; i < x; i++)
+        if (x % i == 0) {
+            return false;
+        }
+    
+    return true;
+}
+
 
 
 function snapCracklePrime(x){
@@ -73,7 +82,6 @@ function snapCracklePrime(x){
             }
             i++
         }
-            
 
         if(i % 2 != 0){
             tenisPe += "Snap"
@@ -91,15 +99,7 @@ function snapCracklePrime(x){
             variavelDeControle == "f"
         }
 
-        if(i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0){
-            if(i == x){
-                tenisPe += "Prime"
-            }else{
-                tenisPe += "Prime"
-                tenisPe += ", "
-            }
-            variavelDeControle = "a"
-        }else if(i == 2 || i == 3 || i == 5 || i == 7){
+        if(eNumeroPrimo(i) == true){
             if(i == x){
                 tenisPe += "Prime"
             }else{
@@ -130,7 +130,7 @@ function snapCracklePrime(x){
     console.log(tenisPe)
     
     return tenisPe
-    
+
 }
 
 // snapCracklePrime(15) deve retornar a string:
@@ -152,5 +152,3 @@ if(testSnapCracklePrime == snapCracklePrime(15)){
 }else{
     console.log("ta Errado! :c Teste versão Prime")
 }
-
-
